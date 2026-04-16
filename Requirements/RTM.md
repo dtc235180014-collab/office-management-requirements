@@ -1,32 +1,14 @@
-# MA TRẬN TRUY VẾT YÊU CẦU (RTM) - DỰ ÁN E-OFFICE HÒA PHÁT
+# MA TRẬN TRUY VẾT YÊU CẦU (RTM) - DỰ ÁN HÒA PHÁT
 
-Tài liệu này dùng để quản lý sự liên kết giữa các tầng yêu cầu trong mô hình Kim tự tháp: Needs -> Features -> Use Cases -> Test Cases.
-
-## 1. Ma trận truy vết chức năng (Functional RTM)
-
-| Needs ID | Feature ID | Use Case ID | Test Case ID | Trạng thái phê duyệt |
+| Needs ID | Features ID | Use Case ID | Test Case ID | Trạng thái |
 | :--- | :--- | :--- | :--- | :--- |
-| **N-01** (Số hóa quy trình) | **F-01** (Workflow) | **UC-01** (Phê duyệt online) | TC-01, TC-02 | [Approved] |
-| **N-01** (Số hóa quy trình) | **F-01** (Workflow) | **UC-02** (Theo dõi trạng thái) | TC-01 | [Approved] |
-| **N-02** (Kho dữ liệu số) | **F-02** (Lưu trữ) | **UC-04** (Lưu trữ hồ sơ) | TC-03 | [Approved] |
-| **N-02** (Kho dữ liệu số) | **F-03** (Tìm kiếm) | **UC-05** (Tra cứu tài liệu) | TC-03 | [Approved] |
-| **N-03** (Tối ưu bằng AI) | **F-04** (AI gợi ý) | **UC-07** (AI nhắc lịch) | TC-04 | [Pending] |
-| **N-03** (Tối ưu bằng AI) | **F-04** (AI gợi ý) | **UC-08** (AI phân loại file) | TC-04 | [Pending] |
-
-## 2. Truy vết yêu cầu phi chức năng (Supplementary Requirements)
-
-| Supplementary ID | Nội dung yêu cầu | Test Case ID | Ghi chú |
-| :--- | :--- | :--- | :--- |
-| **UR-01** (Hiệu năng) | Tìm kiếm tài liệu phải hiển thị kết quả < 2s. | TC-03 | Quan trọng |
-| **UR-02** (Khả dụng) | Hoạt động tốt trên trình duyệt Chrome, Edge. | TC-01 | Đồng bộ |
-| **UR-03** (Tin cậy) | Hệ thống hoạt động 24/7. | N/A | Server-side |
-| **UR-04** (Bảo mật) | Phân quyền truy cập theo chức danh (Lãnh đạo/Nhân viên). | TC-05 | Bắt buộc |
-
----
-
-## 3. Nhật ký phê duyệt (Approval Log)
-*Đây là bằng chứng cho việc Phiên bản hóa và Phê duyệt yêu cầu theo chuẩn GitHub.*
-
-- **Phiên bản 1.0**: Khởi tạo kho yêu cầu (Người thực hiện: Nhóm sinh viên).
-- **Trạng thái**: Đã phê duyệt nội bộ bởi Trưởng nhóm (Ngát).
-- **Cơ chế phê duyệt**: Thông qua Pull Request trên GitHub.
+| N1, N2 | Fe-01 | UC-01: Tạo công văn | TC01, TC02 | Approved |
+| N1, N2 | Fe-05 | UC-02: Phê duyệt công văn | TC03 | Approved |
+| N1, N2 | Fe-05 | UC-03: Từ chối công văn | - | Approved |
+| N3, N6 | Fe-07 | UC-04: Theo dõi trạng thái | - | Approved |
+| N4, N13 | Fe-08 | UC-05: Lưu trữ tài liệu | - | Approved |
+| N4, N13 | Fe-11 | UC-06: Tìm kiếm & Tra cứu | TC05 | Approved |
+| N14, N8 | Fe-12 | UC-07: Quản lý lịch họp | - | Approved |
+| N14, N8 | Fe-14 | UC-08: Nhận thông báo | - | Approved |
+| N7, N9 | Fe-16 | UC-09: AI phân loại | - | Approved |
+| N7, N9 | Fe-17 | UC-10: AI gợi ý tài liệu | - | Approved |
