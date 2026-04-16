@@ -1,54 +1,43 @@
-# TÀI LIỆU KỊCH BẢN KIỂM THỬ CHI TIẾT (TEST CASE SPECIFICATION)
+# CHI TIẾT KỊCH BẢN KIỂM THỬ (TEST CASES & SCENARIOS)
 
-Dài liệu này mô tả chi tiết các kịch bản kiểm thử nhằm đảm bảo hệ thống e-Office Hòa Phát vận hành đúng theo yêu cầu nghiệp vụ đã phân tích.
-
----
-
-### 1. TC01: Thêm công văn mới đầy đủ thông tin
-* **Yêu cầu liên quan:** SR01 (Khởi tạo dữ liệu)
-* **Tiền điều kiện:** Người dùng đã đăng nhập vào hệ thống với quyền nhân viên văn phòng.
-* **Các bước thực hiện:**
-    1. Truy cập vào chức năng "Tạo mới công văn".
-    2. Nhập đầy đủ các trường: Tiêu đề, Số hiệu, Ngày ban hành.
-    3. Đính kèm tệp tin tài liệu (định dạng .pdf hoặc .docx).
-    4. Nhấn nút "Lưu".
-* **Kết quả mong đợi (Expected Result):** Hệ thống thông báo "Thêm mới thành công". Công văn mới xuất hiện ở đầu danh sách quản lý.
+Dưới đây là các kịch bản kiểm thử chi tiết nhằm xác minh các yêu cầu nghiệp vụ (Business Requirements) của hệ thống e-Office Hòa Phát.
 
 ---
 
-### 2. TC02: Thêm công văn nhưng bỏ trống số công văn
-* **Yêu cầu liên quan:** SR01 (Kiểm soát dữ liệu đầu vào)
-* **Tiền điều kiện:** Đang ở màn hình thêm mới công văn.
-* **Các bước thực hiện:**
-    1. Nhập tiêu đề và đính kèm tệp tin.
-    2. **Để trống** ô "Số công văn".
-    3. Nhấn nút "Lưu".
-* **Kết quả mong đợi (Expected Result):** Hệ thống báo lỗi nhập liệu (ô Số công văn hiển thị cảnh báo màu đỏ) và không cho phép lưu bản ghi.
+### TC01: Thêm công văn mới đầy đủ thông tin
+* **Mã yêu cầu (Requirement):** BR-01 (SR01)
+* **Kịch bản chi tiết (Scenario):**
+    1. Người dùng đăng nhập với quyền Nhân viên, chọn "Khởi tạo công văn".
+    2. Nhập Tiêu đề, Số hiệu công văn và chọn loại văn bản.
+    3. Đính kèm tệp tin tài liệu (định dạng PDF/Docx).
+    4. Nhấn nút "Lưu hệ thống".
+* **Kết quả mong đợi:** Công văn được lưu thành công, hiển thị tại danh sách "Quản lý công văn" và trạng thái là "Chờ duyệt".
 
 ---
 
-### 3. TC03: Thực hiện click phê duyệt công văn
-* **Yêu cầu liên quan:** SR02 (Luồng phê duyệt)
-* **Tiền điều kiện:** Có công văn đang ở trạng thái "Chờ phê duyệt" và người dùng đăng nhập với quyền Lãnh đạo.
-* **Các bước thực hiện:**
-    1. Tìm chọn công văn có trạng thái "Chờ phê duyệt".
-    2. Kiểm tra thông tin chi tiết của công văn.
-    3. Nhấn vào nút **"Phê duyệt"**.
-* **Kết quả mong đợi (Expected Result):** Trạng thái công văn thay đổi từ "Chờ phê duyệt" sang **"Đã phê duyệt"**. Hệ thống ghi nhận thời gian và người phê duyệt.
+### TC02: Thêm công văn nhưng bỏ trống số công văn (Kiểm thử lỗi)
+* **Mã yêu cầu (Requirement):** BR-01 (SR01)
+* **Kịch bản chi tiết (Scenario):**
+    1. Tại màn hình "Khởi tạo công văn", nhân viên nhập tiêu đề nhưng để trống ô "Số hiệu".
+    2. Nhấn nút "Lưu hệ thống".
+* **Kết quả mong đợi:** Hệ thống báo lỗi "Trường dữ liệu bắt buộc không được để trống" và không lưu bản ghi vào cơ sở dữ liệu.
 
 ---
 
-### 4. TC05: Tìm kiếm tài liệu bằng từ khóa
-* **Yêu cầu liên quan:** SR04 (Tra cứu dữ liệu)
-* **Tiền điều kiện:** Hệ thống đã có dữ liệu công văn lưu trữ.
-* **Các bước thực hiện:**
-    1. Truy cập thanh tìm kiếm tại màn hình danh sách tài liệu.
-    2. Nhập từ khóa liên quan đến tiêu đề hoặc nội dung tài liệu (Ví dụ: "Hòa Phát").
+### TC03: Thực hiện click phê duyệt công văn
+* **Mã yêu cầu (Requirement):** BR-06 (SR02)
+* **Kịch bản chi tiết (Scenario):**
+    1. Lãnh đạo đăng nhập, mở danh sách công văn "Chờ duyệt".
+    2. Chọn công văn cần xử lý và nhấn nút "Phê duyệt".
+    3. Thực hiện ký số điện tử theo yêu cầu của hệ thống.
+* **Kết quả mong đợi:** Trạng thái công văn chuyển sang "Đã phê duyệt", thông báo đẩy (Fe-14) được gửi tới người khởi tạo.
+
+---
+
+### TC05: Tìm kiếm tài liệu bằng từ khóa
+* **Mã yêu cầu (Requirement):** BR-04 (SR04)
+* **Kịch bản chi tiết (Scenario):**
+    1. Truy cập thanh tìm kiếm thông minh tại màn hình chính.
+    2. Nhập từ khóa dựa trên Metadata (Ví dụ: "Hòa Phát", "Công văn 2026").
     3. Nhấn phím Enter hoặc nút "Tìm kiếm".
-* **Kết quả mong đợi (Expected Result):** Hệ thống hiển thị danh sách tài liệu phù hợp với từ khóa đã nhập. Các tài liệu không liên quan sẽ bị ẩn đi.
-
----
-
-### 5. Ghi chú bổ sung
-* Các kịch bản trên được thiết kế để bao phủ các luồng nghiệp vụ chính (Happy Path) và luồng ngoại lệ (Exception Path).
-* Dữ liệu kiểm thử được sử dụng dựa trên hồ sơ thực tế của dự án e-Office Hòa Phát.
+* **Kết quả mong đợi:** Hệ thống hiển thị chính xác danh sách các tài liệu có chứa từ khóa trong nội dung hoặc Metadata.
