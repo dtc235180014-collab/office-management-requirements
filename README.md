@@ -1,52 +1,21 @@
-# Requirement Management Project
+# HỆ THỐNG QUẢN LÝ VĂN PHÒNG – HÀNH CHÍNH (E-OFFICE)
+**Dự án phối hợp cùng Tập đoàn Hòa Phát**
 
-## Giới thiệu
-Dự án này tập trung vào việc phân tích và quản lý yêu cầu cho hệ thống Văn phòng – Hành chính.  
-Mục tiêu là chuẩn hóa yêu cầu, đảm bảo tính rõ ràng, khả thi và có thể kiểm thử.
+##  Giới thiệu dự án
+Hệ thống E-Office Hòa Phát được thiết kế nhằm hiện đại hóa quy trình quản lý văn phòng truyền thống, chuyển đổi từ văn bản giấy sang quản lý số hóa. Hệ thống tích hợp các công nghệ thông minh như **AI Classification** và **OCR** để tối ưu hóa hiệu suất làm việc.
 
----
+##  Thành viên thực hiện (Nhóm 11)
+* **Ngát, Lập, Mến, Ly, Hồng Anh**
+* **Đơn vị:** Đại học Công nghệ Thông tin và Truyền thông (ICTU)
 
-## Mục tiêu
-- Thu thập yêu cầu từ stakeholder  
-- Tinh chế và làm rõ yêu cầu  
-- Chuẩn hóa yêu cầu theo format SRS  
-- Đảm bảo traceability giữa các yêu cầu  
+##  Cấu trúc dự án
+* **[Glossary/](Glossary/)**: Danh mục thuật ngữ và định nghĩa chuyên ngành.
+* **[Requirements/](Requirements/)**: Đặc tả yêu cầu phần mềm (SRS), Use Cases và Supplementary Requirements (Mục 3.3).
+* **[RTM/](RTM/)**: Ma trận truy vết yêu cầu (Requirements Traceability Matrix).
+* **[Tests/](Tests/)**: Kịch bản kiểm thử chức năng và phi chức năng (Test Cases).
+* **[Vision/](Vision/)**: Tài liệu tầm nhìn và mục tiêu chiến lược của dự án.
 
----
-
-## Nội dung chính
-
-### Raw Requirements
-Chứa các yêu cầu thô được thu thập từ người dùng và stakeholder.  
-Các yêu cầu ở dạng chưa chuẩn hóa, có thể còn mơ hồ.
-
----
-
-### Refinement Discussions
-Chứa các thảo luận nhằm:
-- Làm rõ yêu cầu  
-- Phát hiện vấn đề  
-- Loại bỏ mâu thuẫn  
-- Bổ sung thông tin còn thiếu  
-
----
-
-### Approved Requirements
-Chứa các yêu cầu đã được:
-- Tinh chế  
-- Chuẩn hóa  
-- Đánh giá theo checklist  
-- Phê duyệt để sử dụng trong hệ thống  
-
----
-
-## Quy trình quản lý yêu cầu
-
-```text
-Raw Requirements 
-    ↓
-Refinement Discussions 
-    ↓
-Checklist Evaluation 
-    ↓
-Approved Requirements
+## 🛠 Công nghệ & Mô hình phát triển
+* **Mô hình phát triển:** V-Model (Đảm bảo kiểm thử tương ứng với từng giai đoạn phát triển).
+* **Công nghệ cốt lõi:** Java (Spring Boot), SQL Server, AI Engine, OCR.
+* **Tiêu chuẩn bảo mật:** HTTPS, RBAC, 2FA.
